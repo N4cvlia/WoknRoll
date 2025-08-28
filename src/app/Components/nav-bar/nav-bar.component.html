@@ -1,0 +1,55 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<body>
+
+<!-- NAV WRAPPER -->
+<div class="nav-wrap" aria-hidden="false">
+  <header class="navbar" role="banner" aria-label="Main navigation">
+    <!-- BRAND -->
+    <a href="#" class="brand" aria-label="Wok & Roll home">
+      <span class="logo" aria-hidden="true">
+        <!-- Minimal elegant svg logo: wok + chopsticks -->
+        <svg width="34" height="34" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg1" x1="0" x2="1">
+              <stop offset="0" stop-color="#FFD78A"/>
+              <stop offset="1" stop-color="#E6B24D"/>
+            </linearGradient>
+          </defs>
+          <path d="M8 40c6-12 44-12 48 0" fill="none" stroke="url(#lg1)" stroke-width="4" stroke-linecap="round"/>
+          <rect x="36" y="8" width="22" height="4" rx="2" transform="rotate(-18 36 8)" fill="rgba(255,255,255,0.06)"/>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
+        </svg>
+      </span>
+
+      <span class="title">
+        <span class="name">Wok &amp; Roll</span>
+        <span class="sub">Asian Street Kitchen</span>
+      </span>
+    </a>
+
+    <!-- CHOPSTICK DIVIDER -->
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- ACTIONS (only Login + Menu CTA) -->
+    <div class="actions" role="toolbar" aria-label="Actions">
+      <a href="#login" class="link-login">Login</a>
+
+      <!-- Primary CTA: GO TO MENU -->
+      <a href="#menu" class="btn-menu" role="button" aria-label="Open menu">
+        <span class="icon" aria-hidden="true">🍜</span>
+        <span>View Menu</span>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="hamburger" id="hambtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect y="0" width="22" height="2" rx="1" fill="white" />
+          <rect y="7" width="22" height="2" rx="1" fill="white" />
+          <rect y="14" width="22" height="2" rx="1" fill="white" />
+        </svg>
+      </button>
+    </div>
+  </header>
+</div>
+</body>
+
