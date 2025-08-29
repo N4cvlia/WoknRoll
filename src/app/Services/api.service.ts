@@ -6,4 +6,11 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
   constructor(private http: HttpClient) { }
+
+  getAllProducts() {
+    return this.http.get('https://restaurant.stepprojects.ge/api/Products/GetAll');
+  }
+  getAllCategories() {
+    return this.http.get('https://restaurant.stepprojects.ge/api/Categories/GetAll');
+  }
 }

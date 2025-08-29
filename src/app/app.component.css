@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Asian1';
+    src: url('/sekaiwo/SekaiwoRegular.otf') format('otf'),
+         url('/sekaiwo/SekaiwoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Asian2';
+    src: url('/uciharo-font/Uciharo-LV5EG.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Asian3';
+    src: url('/amanojaku/Amanojaku\ Demo.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

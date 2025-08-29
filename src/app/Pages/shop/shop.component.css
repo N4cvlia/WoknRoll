@@ -1,0 +1,193 @@
+.small-commerical {
+    background-image: url('/images/background.jpg');
+    min-height: 40vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 4px solid #AC1F28;
+    animation: fromTop 1s;
+    h2 {
+        color: #ffffffa5;
+        font-family: "Underdog", system-ui;
+        font-size: 40px;
+    }
+}
+
+.categorys {
+    padding-inline: 70px;
+    h3 {
+        color: #AC1F28;
+        font-size: 30px;
+        font-family: "Reggae One", system-ui;
+        text-align: center;
+        margin: 20px 0;
+        animation: fromBack 1s;
+    }
+    ul {
+        font-size: 25px;
+        color: #fff;
+        font-family: "Underdog", system-ui;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 30px;
+        border-bottom: 2px solid #AC1F28;
+        animation: fromBack 1s;
+        li {
+            cursor: pointer;
+            padding: 10px 2px;
+            &:hover {
+                transition: 0.3s;
+                background-color: #AC1F28;
+                text-shadow: 0px 0px 15px #fff;
+                border-top-right-radius: 12px;
+                border-top-left-radius: 12px;
+            }
+        }
+    }
+}
+
+.filter-products {
+    margin-top: 50px;
+    display: flex;
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        min-height: 60vh;
+        width: 100%;
+        .card {
+            width: 250px;
+            height: 370px;
+            box-shadow: 0 0 10px 1px #B5221C;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+            gap: 20px;
+            animation: fromBack 1s;
+            .img-area {
+                position: relative;
+                width: 250px;
+                height: 200px;
+                background-color: #fff;
+                background-color: #820000;
+                span {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: goldenrod;
+                    color: #fff;
+                    font-family: "Reggae One", system-ui;
+                    padding: 5px;
+                    border-bottom-left-radius: 15px;
+                }
+                p {
+                    position: absolute;
+                    bottom: 0;
+                    padding: 4px 8px;
+                    border-top-right-radius: 10px;
+                    color: #fff;
+                    font-family: "Reggae One", system-ui;
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: contain;
+                    cursor: pointer;
+                    &:hover {
+                        transition: 0.3s;
+                        scale: 1.1;
+                    }
+                }
+            }
+            h6 {
+                text-align: center;
+                font-family: "Reggae One", system-ui;
+                font-size: 19px;
+            }
+            .veg-nuts {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                p {
+                    font-family: "Underdog", system-ui;
+                    color: #010101;
+                    font-size: 17px;
+                    font-weight: bold;
+                }
+            }
+            .action-buttons {
+                position: absolute;
+                bottom: 20px;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                button {
+                    padding: 8px 10px;
+                    cursor: pointer;
+                    overflow: hidden;
+                    background-color: #B5221C;
+                    color: #fff;
+                    border: none;
+                    border-radius: 7px;
+                    font-weight: bold;
+                    font-family: "Reggae One", system-ui;
+                    position: relative;
+                    i {
+                        position: absolute;
+                        right: 40%;
+                        transform: translateY(50px);
+                        font-size: 17px;
+                    }
+                    &:hover {
+                        span {
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        i {
+                            transition: 0.3s;
+                            transform: translateY(0);
+                            font-size: 19px;
+                        }
+                    }
+                }
+            }
+            .cart-message {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 17px;
+                font-family: "Reggae One", system-ui;
+                backdrop-filter: blur(10px) brightness(60%);
+                display: none;
+                p {
+                    margin-top: 15px;
+                    color: rgb(0, 255, 0);
+                }
+                i {
+                    font-size: 50px;
+                    color: rgb(0, 255, 0);
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    color: #fff;
+}

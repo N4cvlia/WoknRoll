@@ -1,0 +1,12 @@
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.944);
+    padding: 15px;
+}
+footer span {
+    font-family: Asian2;
+    font-size: 18px;
+    color: white;
+}

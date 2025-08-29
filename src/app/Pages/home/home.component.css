@@ -1,0 +1,134 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, rgb(164, 39, 41), rgba(0, 0, 0, 0.932) 70%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* https://golden-wok.vercel.app/images/bestsellerbg.png */
+/* rgb(157, 36, 38) */
+.landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+    position: relative;
+}
+
+.side-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    max-width: 30%;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
+    /* background: radial-gradient(circle, rgb(255, 255, 255), rgb(105, 15, 17) 60%); */
+    background-image: url('https://golden-wok.vercel.app/images/bestsellerbg.png');
+    border: 1px solid white;
+    overflow: hidden;
+    position: relative;
+}
+
+.side-img img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+.side-img span {
+    position: absolute;
+    bottom: 0px;
+    font-family: Asian2;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgba(160, 133, 97, 0.867);
+}
+/* .side-img span {
+    position: absolute;
+    bottom: 10px;
+    font-family: Asian2;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+} */
+
+.side-img img:hover {
+    transform: scale(1.05);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    text-align: center;
+    flex: 1;
+    padding: 0 4rem;
+}
+
+.center h1 {
+    font-family: Asian1, sans-serif;
+    font-size: 6rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.center p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+    font-family: Asian2;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    align-self: center;
+    background: #b30000;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #ff1a1a;
+    box-shadow: 0 0 25px rgba(255, 50, 50, 1), 0 0 50px rgba(255, 0, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+.black {
+    height: 300px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.947);
+}
+
+@media (max-width: 900px) {
+    .landing {
+        flex-direction: column;
+    }
+
+    .side-img {
+        max-width: 70%;
+        margin-bottom: 1rem;
+    }
+
+    .center {
+        padding: 1rem;
+    }
+}

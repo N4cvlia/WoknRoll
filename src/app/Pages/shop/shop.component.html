@@ -1,1 +1,40 @@
-<p>shop works!</p>
+<section class="categorys">
+    <h3>Categories</h3>
+    <article>
+        <ul>
+          <li >ALL</li>
+          @for (category of allCategorys; track $index) {
+            <li>{{category.name}}</li>
+          }  
+        </ul>
+    </article>
+    <section class="filter-products"> 
+        <div class="products">
+            @for (food of allProducts; track $index) {
+                <div class="card">
+                    <div class="img-area">
+                        <span>{{food.price}}$</span>
+                        <img [src]="food.image" alt="dishes">
+                        <p [style.backgroundColor]="food.spiciness > 2 ? 'red' : 'green'">Spicness: {{food.spiciness}}</p>
+                    </div>
+                    <h6>{{food.name}}</h6>
+                    <div class="veg-nuts">
+                        <p class="nuts"><i [style.color]="food.nuts ? '#59ff00' : 'red'" class="fa-solid fa-{{food.nuts ? 'check' : 'x'}}"></i> Nuts</p>
+                        <p class="veg"><i [style.color]="food.vegeterian ? '#59ff00' : 'red'" class="fa-solid fa-{{food.vegeterian ? 'check' : 'x'}}"></i> Vegetarian</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button><span>View Details</span> <i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
+                        <button><span>Add to cart</span> <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></button>
+                    </div>
+                    <div class="cart-message" id="{{food.id}}">
+                        <p>Successfully added to cart.</p>
+                        <i class="fa-solid fa-boxes-packing fa-fade"></i>
+                    </div>
+             </div>
+            }
+            @empty {
+                <h1 style="align-self: center;">No products found!</h1>
+            }
+        </div>
+    </section>
+</section>
