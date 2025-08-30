@@ -1,4 +1,6 @@
 body {
+    display: flex;
+    flex-direction: column;
     font-family: 'Poppins', sans-serif;
     background: radial-gradient(circle, rgb(164, 39, 41), rgba(0, 0, 0, 0.932) 70%);
     color: #fff;
@@ -18,7 +20,9 @@ body {
     width: 100%;
     max-width: 1400px;
     padding: 2rem;
+    margin: 150px 0px;
     position: relative;
+
 }
 
 .side-img {

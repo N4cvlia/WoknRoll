@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReviewsComponent } from "../../Components/reviews/reviews.component";
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ReviewsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

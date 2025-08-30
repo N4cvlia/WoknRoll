@@ -1,0 +1,67 @@
+.testimonials {
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #000, #330000, #000);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .testimonials .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    font-family: Asian3, sans-serif;
+    color: #ff4444;
+  }
+  
+  /* Carousel */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+  }
+  
+  .slide {
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 0 1rem;
+    opacity: 0.9;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .review-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  
+  .review-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #f0f0f0;
+  }
+  
+  .review-card span {
+    display: block;
+    font-weight: 600;
+    color: #ff6666;
+  }
+  
+  /* Infinite scroll animation */
+  @keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  

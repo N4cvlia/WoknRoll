@@ -46,7 +46,7 @@ body {
 }
 
 .navbar {
-    width: min(1300px, 96%);
+    width: 90%;
     height: 90px;
     margin: 0;
     display: flex;
@@ -280,15 +280,30 @@ button:focus-visible {
         display: none;
     }
 
-    .hamburger {
-        display: inline-flex;
-    }
-
     .actions .link-login {
         display: none;
     }
 
     /* hide text login on mobile to keep actions minimal */
+}
+@media (max-width: 585px) {
+    .hamburger {
+        display: inline-flex;
+    }
+    .btn-menu {
+        display: none;
+    }
+}
+@media (max-width: 363px) {
+    .brand .title .name {
+        font-size: 32px;
+    }
+    .brand .title .sub {
+        font-size: 13px;
+    }
+    .logo-img {
+        height: 60px;
+    }
 }
 
 /* =========================
