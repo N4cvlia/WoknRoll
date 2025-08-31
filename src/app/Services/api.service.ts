@@ -13,4 +13,7 @@ export class ApiService {
   getAllCategories() {
     return this.http.get('https://restaurant.stepprojects.ge/api/Categories/GetAll');
   }
+  getProductsByCategory(id: number) {
+    return this.http.get(`https://restaurant.stepprojects.ge/api/Categories/GetCategory/${id}`);
+  }
 }

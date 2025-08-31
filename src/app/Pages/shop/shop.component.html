@@ -4,17 +4,42 @@
         <!-- <span class="txt1">Wok&Roll</span> -->
     </div>
 </div>
+
 <section class="categorys">
     <h3>Categories</h3>
     <article>
-        <ul>
-          <li >ALL</li>
+        <div class="categories-list">
+          <input type="radio" id="radio-0" style="display: none;" name="tabs" checked="" (click)="getAllProducts()">
+          <label class="tab" for="radio-0">ALL</label>
           @for (category of allCategorys; track $index) {
-            <li>{{category.name}}</li>
-          }  
-        </ul>
+            <input type="radio" [id]="'radio-' + category.id" name="tabs" style="display: none;" (click)="getProductByCategory(category.id)">
+            <label class="tab" [for]="'radio-' + category.id">{{category.name}}</label>
+          }
+          <span class="glider"></span>
+        </div>
     </article>
     <section class="filter-products"> 
+        <div class="filter-card">
+            <p>Filter <i class="fa-solid fa-filter"></i></p>
+            <div class="choose-spicness">
+                <label for="spicness">Spiciness: <span></span>{{choosenSpicness == -1 ? "Not chosen" : choosenSpicness}}</label>
+                <input id="spicness" type="range" min="-1" max="4" step="1" [(ngModel)]="choosenSpicness">
+            </div>
+            <div [style.visibility]="choosenSpicness == -1 ? 'hidden' : 'visible'" class="checkbox-option">
+                <input [(ngModel)]="noNuts" id="nuts" type="checkbox">
+                <label for="nuts">With nuts</label>
+            </div>
+             <div [style.visibility]="choosenSpicness == -1 ? 'hidden' : 'visible'" class="checkbox-option">
+                <input [(ngModel)]="vegOnly"   id="Vegetarian" type="checkbox">
+                <label for="Vegetarian">Vegetarian only</label>
+            </div>
+            <div class="action-buttons">
+                <button>Reset</button>
+                <button>Apply Filter</button>
+            </div>
+            <h3 [style.display]="choosenSpicness == -1 ? 'block' : 'none'">GET ALL</h3>
+            <img src="/images/filterImage.png" alt="filter-image">
+        </div>
         <div class="products">
             @for (food of allProducts; track $index) {
                 <div class="card">
