@@ -1,6 +1,4 @@
-/* =========================
-     Variables & Reset
-     ========================= */
+
 :root {
     --bg: #0b0b0b;
     --panel: #0f0f10;
@@ -31,10 +29,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-/* =========================
-     NAVBAR LAYOUT
-     ========================= */
 .nav-wrap {
     position: sticky;
     top: 12px;
@@ -68,7 +62,6 @@ body {
     height: 70px;
 }
 
-/* ---------- Brand (left) ---------- */
 .brand {
     display: flex;
     align-items: center;
@@ -77,8 +70,6 @@ body {
     text-decoration: none;
     color: inherit;
 }
-
-/* inline vector logo - keep crisp and single-color for easy theming */
 .brand .logo {
     display: inline-grid;
     place-items: center;
