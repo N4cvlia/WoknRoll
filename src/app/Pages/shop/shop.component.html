@@ -9,7 +9,7 @@
     <h3>Categories</h3>
     <article>
         <div class="categories-list">
-          <input type="radio" id="radio-0" style="display: none;" name="tabs" checked="" (click)="getAllProducts()">
+          <input type="radio" id="radio-0" style="display: none;" name="tabs" [(ngModel)]="isChecked" value="checked" (click)="getAllProducts()">
           <label class="tab" for="radio-0">ALL</label>
           @for (category of allCategorys; track $index) {
             <input type="radio" [id]="'radio-' + category.id" name="tabs" style="display: none;" (click)="getProductByCategory(category.id)">
@@ -20,7 +20,7 @@
     </article>
     <section class="filter-products"> 
         <div class="filter-card">
-            <p>Filter <i class="fa-solid fa-filter"></i></p>
+            <p>Filter By Spiciness</p>
             <div class="choose-spicness">
                 <label for="spicness">Spiciness: <span></span>{{choosenSpicness == -1 ? "Not chosen" : choosenSpicness}}</label>
                 <input id="spicness" type="range" min="-1" max="4" step="1" [(ngModel)]="choosenSpicness">
@@ -34,11 +34,11 @@
                 <label for="Vegetarian">Vegetarian only</label>
             </div>
             <div class="action-buttons">
-                <button>Reset</button>
-                <button>Apply Filter</button>
+                <button (click)="applyFilterReset()">Reset</button>
+                <button (click)="applyFilter()">Apply Filter</button>
             </div>
             <h3 [style.display]="choosenSpicness == -1 ? 'block' : 'none'">GET ALL</h3>
-            <img src="/images/filterImage.png" alt="filter-image">
+            <img src="wokIcon.png" alt="filter-image">
         </div>
         <div class="products">
             @for (food of allProducts; track $index) {
@@ -46,12 +46,12 @@
                     <div class="img-area">
                         <span>{{food.price}}$</span>
                         <img [src]="food.image" alt="dishes">
-                        <p [style.backgroundColor]="food.spiciness > 2 ? 'red' : 'green'">Spicness: {{food.spiciness}}</p>
+                        <p [style.backgroundColor]="food.spiciness == 0 ? 'green' : food.spiciness == 1 ? 'darkgreen' : food.spiciness == 2 ? 'rgba(255, 255, 0, 0.76)' : food.spiciness == 3 ? 'red' : 'rgba(160, 0, 0, 1)'">Spiciness: {{food.spiciness}}</p>
                     </div>
                     <h6>{{food.name}}</h6>
                     <div class="veg-nuts">
-                        <p class="nuts"><i [style.color]="food.nuts ? '#59ff00' : 'red'" class="fa-solid fa-{{food.nuts ? 'check' : 'x'}}"></i> Nuts</p>
-                        <p class="veg"><i [style.color]="food.vegeterian ? '#59ff00' : 'red'" class="fa-solid fa-{{food.vegeterian ? 'check' : 'x'}}"></i> Vegetarian</p>
+                        <p class="nuts"><i [style.color]="food.nuts ? '#59ff00' : 'red'" class="fa-solid fa-{{food.nuts ? 'circle-check' : 'circle-xmark'}}"></i> Nuts</p>
+                        <p class="veg"><i [style.color]="food.vegeterian ? '#59ff00' : 'red'" class="fa-solid fa-{{food.vegeterian ? 'circle-check' : 'circle-xmark'}}"></i> Vegetarian</p>
                     </div>
                     <div class="action-buttons">
                         <button><span>View Details</span> <i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>

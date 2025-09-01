@@ -45,10 +45,12 @@
     font-family: Asian1;
     font-weight: bold;
     font-size: 100px;
+    color: rgba(139, 0, 0, 0.791);
 }
 
 .categorys {
     padding-inline: 70px;
+    margin-bottom: 30px;
 
     h3 {
         color: #AC1F28;
@@ -96,7 +98,7 @@
 }
 .filter-card {
     position: sticky;
-    top: 50px;
+    top: 120px;
     width: 250px;
     height: 370px;
     background-color: #fff;
@@ -112,23 +114,9 @@
     box-shadow: 0 0 5px 1px #B5221C;
     animation: fromLeft 1s;
     p {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 18px;
-        position: relative;
-        ::after {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: 0;
-            width: 55px;
-            background-color: #010101;
-            height: 1px;
-        }
-        i {
-            color: #B5221C;
-        }
+        font-size: 20px;
+        align-self: center;
+        font-family: Asian2;
     }
     .choose-spicness {
         display: flex;
@@ -137,7 +125,9 @@
         gap: 10px;
         margin-top: 50px;
         label {
-            font-size: 15px;
+            font-family: Asian2;
+            font-size: 16px;
+            margin: 5px 0;
         }
         input {
             appearance: none;
@@ -187,6 +177,7 @@
             }
         }
         label {
+            font-family: Asian2;
             cursor: pointer;
         }
     }
@@ -203,8 +194,15 @@
         border: none;
         border-radius: 7px;
         font-weight: bold;
-        font-family: "Reggae One", system-ui;
+        font-family: Asian2;
         position: relative;
+        font-size: 16px;
+        &:hover {
+            background-color: #fff;
+            color: #B5221C;
+            border: 2px solid #B5221C;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+        }
     }
     }
     img {
@@ -216,7 +214,7 @@
     h3 {
         position: absolute;
         left: 70px;
-        top: 195px;
+        top: 160px;
         font-size: 22px;
     }
 }
@@ -239,10 +237,10 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
             background-color: #fff;
-            gap: 20px;
+            gap: 15px;
             animation: fromBack 1s;
 
             .img-area {
@@ -269,7 +267,7 @@
                     padding: 4px 8px;
                     border-top-right-radius: 10px;
                     color: #fff;
-                    font-family: "Reggae One", system-ui;
+                    font-family: Asian2;
                 }
 
                 img {
@@ -287,8 +285,8 @@
 
             h6 {
                 text-align: center;
-                font-family: "Reggae One", system-ui;
-                font-size: 19px;
+                font-family: Asian1;
+                font-size: 25px;
             }
 
             .veg-nuts {
@@ -298,7 +296,7 @@
                 gap: 10px;
 
                 p {
-                    font-family: "Underdog", system-ui;
+                    font-family: Asian2;
                     color: #010101;
                     font-size: 17px;
                     font-weight: bold;
@@ -313,7 +311,7 @@
                 width: 100%;
 
                 button {
-                    padding: 8px 10px;
+                    padding: 12px 14px;
                     cursor: pointer;
                     overflow: hidden;
                     background-color: #B5221C;
@@ -321,8 +319,9 @@
                     border: none;
                     border-radius: 7px;
                     font-weight: bold;
-                    font-family: "Reggae One", system-ui;
+                    font-family: Asian2;
                     position: relative;
+                    font-size: 14px;
 
                     i {
                         position: absolute;
