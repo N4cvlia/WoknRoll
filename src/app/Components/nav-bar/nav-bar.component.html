@@ -21,11 +21,23 @@
     <div class="divider" aria-hidden="true"></div>
 
     <!-- ACTIONS (only Login + Menu CTA) -->
-    <div class="actions" role="toolbar" aria-label="Actions">
-      <a routerLink="login" class="btn-menu">
-        <img src="te.svg" alt="" class="icon1"> 
-        <span>Log In</span>
-    </a>
+     
+      <div class="actions" role="toolbar" aria-label="Actions">
+        @if(!isLoggedIn){
+        <a routerLink="login" class="btn-menu">
+          <img src="te.svg" alt="" class="icon1"> 
+          <span>Log In</span>
+        </a>
+      }@else {
+        <a routerLink="profile" class="btn-menu">
+          <img [src]="profile?.avatar" alt="" class="icon1"> 
+          <span>{{profile?.firstName}}</span>
+        </a>
+        <a routerLink="cart" class="btn-menu">
+          <img src="tetricart.svg" alt="" class="icon2"> 
+          <span>Cart</span>
+        </a>
+      }
 
       <!-- Primary CTA: GO TO MENU -->
       <a href="#menu" class="btn-menu" role="button" aria-label="Open menu" routerLink="shop">

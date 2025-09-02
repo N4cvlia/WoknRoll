@@ -22,4 +22,7 @@ export class ApiService {
   signUp(body: any) {
     return this.http.post("https://api.everrest.educata.dev/auth/sign_up", body)
   }
+  getAuth() {
+    return this.http.get("https://api.everrest.educata.dev/auth")
+  }
 }

@@ -35,7 +35,7 @@ body {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
     object-fit: cover;
     /* background: radial-gradient(circle, rgb(255, 255, 255), rgb(105, 15, 17) 60%); */
-    background-image: url('https://golden-wok.vercel.app/images/bestsellerbg.png');
+    background-image: url('/bestsellerbg.png');
     border: 1px solid white;
     overflow: hidden;
     position: relative;

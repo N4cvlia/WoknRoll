@@ -1,35 +1,52 @@
-<div class="login-container">
-    <h2>Log In to Your Account</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email" placeholder="Bendover@gmail.com" required>
-            <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-                <small class="error-text" *ngIf="loginForm.get('email')?.errors?.['required']">
-                    Email is required.
-                </small>
-                <small class="error-text" *ngIf="loginForm.get('email')?.errors?.['email']">
-                    Email is invalid.
-                </small>
+<body>
+    <div class="login-container">
+        <h2>Log In to Your Account</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="Bendover@gmail.com" required>
+                @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                    <div>
+                        @if (loginForm.get('email')?.errors?.['required']) {
+                            <small class="error-text">
+                                Email is required.
+                            </small>
+                        }@else if (loginForm.get('email')?.errors?.['email']) {
+                            <small class="error-text">
+                                Email is invalid.
+                            </small>
+                        }
+                    </div>
+                }
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" formControlName="password" placeholder="Enter your password" required>
-            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-                <small class="error-text" *ngIf="loginForm.get('password')?.errors?.['required']">
-                    Password is required.
-                </small>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                    required>
+                    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                        <div>
+                            @if (loginForm.get('password')?.errors?.['required']) {
+                                <small class="error-text">
+                                    Password is required.
+                                </small>
+                            }
+                        </div>
+                    }
             </div>
-        </div>
-        <button type="submit" class="login-btn">Log in</button>
-        @if(succ) {
-            <div class="succ"><span>Succesfully logged in!</span></div>
-        }@else if (err) {
-            <span class="eror">Invalid email or password.</span>
-        }
-        <div class="form-footer">
-            <a routerLink="/Register">Create an account</a>
-        </div>
-    </form>
-</div>
+            <button type="submit" class="login-btn">
+                @if(succ) {
+                    <div class="succ"><span>Succesfully logged in!</span></div>
+                }@else {
+                    Login In
+                }
+            </button>
+            @if (err) {
+                <span class="eror">Invalid email or password.</span>
+                }
+            <div class="form-footer">
+                <a routerLink="/Register">Create an account</a>
+            </div>
+
+        </form>
+    </div>
+</body>

@@ -3,6 +3,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { ShopComponent } from './Pages/shop/shop.component';
 import { DetailsComponent } from './Pages/details/details.component';
 import { shopResolver } from './Resolvers/shop.resolver';
+import { loginGuard } from './Guards/login.guard';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -15,7 +16,15 @@ export const routes: Routes = [
     },
     {path: 'cart', loadComponent: () => import('./Pages/cart/cart.component').then(m => m.CartComponent)},
     {path: 'product/:id', loadComponent: () => import('./Pages/details/details.component').then(m => m.DetailsComponent)},
-    {path: 'login', loadComponent: () => import('./Pages/login/login.component').then(m => m.LoginComponent)},
-    {path: 'register', loadComponent: () => import('./Pages/register/register.component').then(m => m.RegisterComponent)},
+    {
+        path: 'login',
+        loadComponent: () => import('./Pages/login/login.component').then(m => m.LoginComponent),
+        canActivate: [loginGuard]
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./Pages/register/register.component').then(m => m.RegisterComponent),
+        canActivate: [loginGuard]
+    },
     {path: '**', redirectTo: ''}
 ];
