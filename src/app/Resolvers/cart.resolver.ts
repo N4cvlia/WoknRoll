@@ -1,5 +1,10 @@
-import { ResolveFn } from '@angular/router';
+import { inject } from '@angular/core';
+import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from '@angular/router';
+import { ApiService } from '../Services/api.service';
 
-export const cartResolver: ResolveFn<boolean> = (route, state) => {
-  return true;
+export const cartResolver: ResolveFn<any> = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot
+) => {
+  return inject(ApiService).getCart();
 };

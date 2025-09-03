@@ -1,1 +1,18 @@
-<p>details works!</p>
+<section>
+    <div class="left">
+        <button routerLink="/shop"><i class="fa-solid fa-arrow-left"></i> Back</button>
+       <img [src]="productInfo?.image" alt="">
+    </div>
+    <div class="right">
+        <article>
+            <h2>{{productInfo?.name}}</h2>
+            <h3>Price: {{productInfo?.price}}$</h3>
+            <div class="veg-nuts">
+                <p class="nuts"><i [style.color]="productInfo?.nuts ? '#59ff00' : 'red'" class="fa-solid fa-{{productInfo?.nuts ? 'circle-check' : 'circle-xmark'}}"></i> Nuts</p>
+                <p class="veg"><i [style.color]="productInfo?.vegeterian ? '#59ff00' : 'red'" class="fa-solid fa-{{productInfo?.vegeterian ? 'circle-check' : 'circle-xmark'}}"></i> Vegetarian</p>
+            </div>
+            <p class="details">{{productInfo?.name}} ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, quo quisquam ducimus dolore beatae eos similique vero magni exercitationem ipsa cumque soluta corporis sunt suscipit sed fuga, repellendus amet necessitatibus dolores cupiditate et nesciunt dolorem, aliquid tempore? Culpa aliquam placeat, illo est rem, facilis, quis magnam sed nesciunt deleniti provident beatae debitis nulla iure delectus eos! Quia, laudantium recusandae. Odio facere dignissimos officia natus vitae adipisci impedit, quia placeat.</p>
+            <button (click)="addToCart(productInfo)" [style.color]="isBought ? 'green' : 'white'">{{isBought? "Added to Cart!": "Add to cart"}} <img src="tetricart.svg" alt="" [style.display]="isBought ? 'none': ''"></button>
+        </article>
+    </div>
+</section>

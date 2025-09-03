@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../Services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SubjectsService } from '../../Services/subjects.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-shop',
@@ -17,13 +19,12 @@ export class ShopComponent implements OnInit{
   public vegOnly: any = "";
   public isChecked: any = "checked";
 
-  constructor(private api : ApiService, private actR: ActivatedRoute) {
+  constructor(private api : ApiService, private actR: ActivatedRoute, private routing: Router, private subjects: SubjectsService, private cookies: CookieService) {
     scrollTo(0,0);
   }
   ngOnInit(): void {
     this.actR.data.subscribe((res) => {
       this.allCategorys = res['ShopInfo'].categories;
-      console.log(this.allCategorys);
       this.allProducts = res['ShopInfo'].products;
     });
   }
@@ -37,7 +38,6 @@ export class ShopComponent implements OnInit{
   getAllCategorys() {
     this.api.getAllCategories().subscribe((res) => {
       this.allCategorys = res;
-      console.log(res);
     });
   }
   getProductByCategory(id: number) {
@@ -73,5 +73,29 @@ export class ShopComponent implements OnInit{
     this.noNuts = "";
     this.vegOnly = "";
     this.getAllProducts();
+  }
+  goToDetails(data: any) {
+    this.routing.navigate(["/details"])
+    this.subjects.setProduct(data);
+  }
+  addToCart(data: any) {
+    if(this.cookies.get("User")) {
+      const body = {
+        quantity: 1,
+        price: data.price,
+        productId: data.id
+      }
+      this.api.addToCart(body).subscribe({
+        next: () => {
+            document.getElementById(`cart-message${data?.id}`)!.style.display = "flex"
+            
+            setTimeout(() => {
+              document.getElementById(`cart-message${data?.id}`)!.style.display = "none"
+            }, 2000);
+        }
+      });
+    }else {
+      this.routing.navigate(["/login"], {skipLocationChange: true})
+    }
   }
 }

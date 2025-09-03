@@ -1,10 +1,10 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from '@angular/router';
-import { SubjectsService } from '../Services/subjects.service';
+import { ApiService } from '../Services/api.service';
 
-export const detailsResolver: ResolveFn<any> = (
+export const profileResolver: ResolveFn<any> = (
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ) => {
-  return inject(SubjectsService).getProduct();
+  return inject(ApiService).getAuth();
 };

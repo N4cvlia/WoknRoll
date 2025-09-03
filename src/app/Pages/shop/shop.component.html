@@ -43,21 +43,21 @@
         <div class="products">
             @for (food of allProducts; track $index) {
                 <div class="card">
-                    <div class="img-area">
+                    <div class="img-area" (click)="goToDetails(food)">
                         <span>{{food.price}}$</span>
                         <img [src]="food.image" alt="dishes">
                         <p [style.backgroundColor]="food.spiciness == 0 ? 'green' : food.spiciness == 1 ? 'darkgreen' : food.spiciness == 2 ? 'rgba(255, 255, 0, 0.76)' : food.spiciness == 3 ? 'red' : 'rgba(160, 0, 0, 1)'">Spiciness: {{food.spiciness}}</p>
                     </div>
-                    <h6>{{food.name}}</h6>
+                    <h6 (click)="goToDetails(food)">{{food.name}}</h6>
                     <div class="veg-nuts">
                         <p class="nuts"><i [style.color]="food.nuts ? '#59ff00' : 'red'" class="fa-solid fa-{{food.nuts ? 'circle-check' : 'circle-xmark'}}"></i> Nuts</p>
                         <p class="veg"><i [style.color]="food.vegeterian ? '#59ff00' : 'red'" class="fa-solid fa-{{food.vegeterian ? 'circle-check' : 'circle-xmark'}}"></i> Vegetarian</p>
                     </div>
                     <div class="action-buttons">
-                        <button><span>View Details</span> <i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
-                        <button><span>Add to cart</span> <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></button>
+                        <button (click)="goToDetails(food)"><span>View Details</span> <i class="fa-solid fa-eye" style="color: #ffffff;"></i></button>
+                        <button (click)="addToCart(food)"><span>Add to cart</span> <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></button>
                     </div>
-                    <div class="cart-message" id="{{food.id}}">
+                    <div class="Hidden cart-message" id="cart-message{{food?.id}}">
                         <p>Successfully added to cart.</p>
                         <i class="fa-solid fa-boxes-packing fa-fade"></i>
                     </div>

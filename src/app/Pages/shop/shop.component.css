@@ -21,7 +21,7 @@
     width: 100%;
     justify-content: center;
     margin-top: 100px;
-    
+    padding-bottom: 30px;
 }
 
 .BIC {
@@ -51,15 +51,19 @@
 }
 
 .categorys {
+    background-image: url('/login.png');
     padding-inline: 70px;
-    margin-bottom: 30px;
-
+    padding-bottom: 30px;
+    border-top: 3px solid #820000;
+    border-bottom: 3px solid #820000;
+    box-shadow: 0 10px 50px rgba(157, 36, 38, 0.577), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
     h3 {
-        color: #AC1F28;
+        color: white;
         font-size: 30px;
         font-family: Asian3;
         text-align: center;
-        margin: 30px 0;
+        margin: 30px 0 30px 0px;
+        padding-top: 15px;
         animation: fromBack 1s;
     }
 
@@ -71,6 +75,7 @@
         justify-content: center;
         list-style: none;
         border-bottom: 2px solid #AC1F28;
+        
         animation: fromBack 1s;
         gap: 10px;
 
@@ -289,6 +294,7 @@
                 text-align: center;
                 font-family: Asian1;
                 font-size: 25px;
+                cursor: pointer;
             }
 
             .veg-nuts {
@@ -359,10 +365,8 @@
                 justify-content: center;
                 align-items: center;
                 font-size: 17px;
-                font-family: "Reggae One", system-ui;
+                font-family: Asian3;
                 backdrop-filter: blur(10px) brightness(60%);
-                display: none;
-
                 p {
                     margin-top: 15px;
                     color: rgb(0, 255, 0);
@@ -373,6 +377,9 @@
                     color: rgb(0, 255, 0);
                     margin-top: 10px;
                 }
+            }
+            .cart-message.Hidden {
+                display: none;
             }
         }
     }

@@ -252,9 +252,6 @@ button:focus-visible {
     border-radius: 8px
 }
 
-/* =========================
-     Mobile responsive
-     ========================= */
 .hamburger {
     display: none;
     background: transparent;
@@ -264,45 +261,6 @@ button:focus-visible {
     cursor: pointer;
     color: #fff;
 }
-
-@media (max-width:940px) {
-    .nav-list {
-        display: none;
-    }
-
-    .divider {
-        display: none;
-    }
-
-    .actions .link-login {
-        display: none;
-    }
-
-    /* hide text login on mobile to keep actions minimal */
-}
-@media (max-width: 585px) {
-    .hamburger {
-        display: inline-flex;
-    }
-    .btn-menu {
-        display: none;
-    }
-}
-@media (max-width: 363px) {
-    .brand .title .name {
-        font-size: 32px;
-    }
-    .brand .title .sub {
-        font-size: 13px;
-    }
-    .logo-img {
-        height: 60px;
-    }
-}
-
-/* =========================
-     Mobile Drawer (off-canvas)
-     ========================= */
 .mobile-drawer {
     position: fixed;
     right: 12px;
@@ -342,14 +300,46 @@ button:focus-visible {
     margin-top: 8px;
 }
 
-/* small content area for demo page below nav */
+
 main {
     max-width: 1200px;
     margin: 26px auto;
     padding: 20px;
 }
+@media (max-width:940px) {
+    .nav-list {
+        display: none;
+    }
 
-/* Prefer reduced motion */
+    .divider {
+        display: none;
+    }
+
+    .actions .link-login {
+        display: none;
+    }
+
+    /* hide text login on mobile to keep actions minimal */
+}
+@media (max-width: 725px) {
+    .hamburger {
+        display: inline-flex;
+    }
+    .btn-menu {
+        display: none;
+    }
+}
+@media (max-width: 363px) {
+    .brand .title .name {
+        font-size: 32px;
+    }
+    .brand .title .sub {
+        font-size: 13px;
+    }
+    .logo-img {
+        height: 60px;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
 
     .nav-list a,

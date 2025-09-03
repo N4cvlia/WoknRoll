@@ -1,1 +1,243 @@
-<p>register works!</p>
+<div class="register-page-body">
+    <div class="register-container">
+        <h2 class="register-title">Create Your Account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="register-name-group">
+                <div class="register-form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" formControlName="firstName" placeholder="Enter first name" required>
+                    @if(registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid) {
+                        <div>
+                            @if (registerForm.get('firstName')?.errors?.['required']) {
+                                <small class="error-text">
+                                    First name is required.
+                                </small>
+                            }@else if (registerForm.get('firstName')?.errors?.['minlength']) {
+                                <small class="error-text">
+                                    First name must be at least 2 characters.
+                                </small>
+                            }@else if (registerForm.get('firstName')?.errors?.['pattern']) {
+                                <small class="error-text">
+                                    Only letters are allowed.
+                                </small>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="register-form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" formControlName="lastName" placeholder="Enter last name" required>
+                    @if (registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid) {
+                        <div>
+                            @if (registerForm.get('lastName')?.errors?.['required']) {
+                                <small class="error-text">
+                                    Last name is required.
+                                </small>
+                            }@else if (registerForm.get('lastName')?.errors?.['minlength']) {
+                                <small class="error-text">
+                                    Last name must be at least 2 characters.
+                                </small>
+                            }@else if (registerForm.get('lastName')?.errors?.['pattern']) {
+                                <small class="error-text">
+                                    Only letters are allowed.
+                                </small>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="register-form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" formControlName="age" placeholder="Enter your age" required>
+                @if (registerForm.get('age')?.touched && registerForm.get('age')?.invalid) {
+                    <div>
+                        @if (registerForm.get('age')?.errors?.['required']) {
+                            <small class="error-text">
+                                Age is required.
+                            </small>
+                        }@else if (registerForm.get('age')?.errors?.['min']) {
+                            <small class="error-text">
+                                Must be at least 13 years old.
+                            </small>
+                        }@else if (registerForm.get('age')?.errors?.['max']) {
+                            <small class="error-text">
+                                Can't be older than 120 years old.
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" placeholder="Enter your email" required>
+                @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid) {
+                    <div>
+                        @if (registerForm.get('email')?.errors?.['required']) {
+                            <small class="error-text">
+                                Email is required.
+                            </small>
+                        }@else if (registerForm.get('email')?.errors?.['email']) {
+                            <small class="error-text">
+                                Email is invalid.
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Create a password" required>
+                @if (registerForm.get('password')?.touched && registerForm.get('password')?.invalid) {
+                    <div>
+                        @if (registerForm.get('password')?.errors?.['required']) {
+                            <small class="error-text">
+                                Password is required.
+                            </small>
+                        }@else if (registerForm.get('password')?.errors?.['minlength']) {
+                            <small class="error-text">
+                                Must be at least 8 characters.
+                            </small>
+                        }@else if (registerForm.get('password')?.errors?.['maxlength']) {
+                            <small class="error-text">
+                                Can't be longer than 64 characters.
+                            </small>
+                        }@else if (registerForm.get('password')?.errors?.['pattern']) {
+                            <small class="error-text">
+                                Must include uppercase, lowercase, number, and special character.
+                            </small>
+                        }
+                    </div>
+                }
+                
+            </div>
+
+            <div class="register-form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" formControlName="address" placeholder="Enter your address" required>
+                @if (registerForm.get('address')?.touched && registerForm.get('address')?.invalid) {
+                    <div>
+                        @if (registerForm.get('address')?.errors?.['required']) {
+                            <small class="error-text">
+                                Address is required.
+                            </small>
+                        }@else if (registerForm.get('address')?.errors?.['minlength']) {
+                            <small class="error-text">
+                                Must be at least 5 characters.
+                            </small>
+                        }@else if (registerForm.get('address')?.errors?.['maxlength']) {
+                            <small class="error-text">
+                                Can't be longer than 200 characters.
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phone" value="+995 " placeholder="Enter your phone number" required>
+                @if (registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid) {
+                    <div>
+                        @if (registerForm.get('phone')?.errors?.['required']) {
+                            <small class="error-text">
+                                Phone is required.
+                            </small>
+                        }@else if (registerForm.get('phone')?.errors?.['pattern']) {
+                            <small class="error-text">
+                                Please enter a valid phone number (e.g. +9955XXXXXXX).
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" formControlName="zipcode" placeholder="Enter your zip code" required>
+                @if (registerForm.get('zipcode')?.touched && registerForm.get('zipcode')?.invalid) {
+                    <div>
+                        @if (registerForm.get('zipcode')?.errors?.['required']) {
+                            <small class="error-text">
+                                Zip code is required.
+                            </small>
+                        }@else if (registerForm.get('zipcode')?.errors?.['pattern']) {
+                            <small class="error-text">
+                                Zip code must contain only numbers.
+                            </small>
+                        }@else if (registerForm.get('zipcode')?.errors?.['minlength']) {
+                            <small class="error-text">
+                                Must be at least 4 digits.
+                            </small>
+                        }@else if (registerForm.get('zipcode')?.errors?.['maxlength']) {
+                            <small class="error-text">
+                                Can't be over 4 digits.
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="avatar">Profile Picture</label>
+                <input type="text" id="avatar" formControlName="avatar" placeholder="Enter image link" required>
+                @if (registerForm.get('avatar')?.touched && registerForm.get('avatar')?.invalid) {
+                    <div>
+                        @if (registerForm.get('avatar')?.errors?.['required']) {
+                            <small class="error-text">
+                                Avatar is required.
+                            </small>
+                        }@else if (registerForm.get('avatar')?.errors?.['pattern']) {
+                            <small class="error-text">
+                                Please enter a valid image link (jpg, png, gif, webp).
+                            </small>
+                        }
+                    </div>
+                }
+            </div>
+
+            <div class="register-form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" formControlName="gender" required>
+                    <option value="" selected disabled>Select Gender</option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                @if (registerForm.get('gender')?.touched && registerForm.get('gender')?.invalid) {
+                    <div>
+                        @if (registerForm.get('gender')?.errors?.['required']) {
+                            <small class="error-text">
+                                Gender is required.
+                            </small>
+                        }
+                    </div>
+                } 
+            </div>
+
+            <button type="submit" class="register-submit-btn">
+                @if(succ) {
+                    <div class="succ"><span>Succesfully logged in!</span></div>
+                }@else {
+                    Register
+                }
+            </button>
+
+            <div class="register-form-footer">
+                <a routerLink="/login">Already have an account? Log in</a>
+            </div>
+            <div class="errors" id="errorss">
+                @for (item of err; track $index) {
+                    <span>{{item.split(".")[1].split("_").join(" ")}}</span>
+                }
+            </div>
+            @if(succ) {
+                <div class="succ">
+                    <span>Verify your Email!</span>
+                </div>
+            }
+        </form>
+    </div>
+</div>

@@ -30,12 +30,9 @@ export class NavBarComponent implements OnInit {
       this.api.getAuth().subscribe({
         next: (data:any) => {
           this.profile = data;
-          console.log(data)
           this.isLoggedIn = true;
         }
       });
-    }else {
-      console.log("logged in")
     }
   }
 

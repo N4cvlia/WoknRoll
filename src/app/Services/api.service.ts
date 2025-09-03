@@ -25,4 +25,16 @@ export class ApiService {
   getAuth() {
     return this.http.get("https://api.everrest.educata.dev/auth")
   }
+  getCart() {
+    return this.http.get("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+  }
+  deleteItem(id: number) {
+    return this.http.delete(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`)
+  }
+  updateItem(body: any) {
+    return this.http.put(`https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket`, body)
+  }
+  addToCart(body: any) {
+    return this.http.post(`https://restaurant.stepprojects.ge/api/Baskets/AddToBasket`, body)
+  }
 }

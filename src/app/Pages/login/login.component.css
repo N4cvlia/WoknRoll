@@ -12,6 +12,8 @@ body,html {
     margin: 210px auto;
     position: relative;
     background-image: url('/login.png');
+    border: 3px solid #820000;
+    box-shadow: 0 10px 50px rgba(157, 36, 38, 0.577), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
 }
 
 .login-container h2 {
@@ -52,15 +54,14 @@ body,html {
     font-size: 18px;
     font-weight: 500;
     transition: 0.3s all;
+    border: 1px solid black;
 }
 
 .login-btn:hover {
-    background-color: #ffffff; /* Darker shade for hover */
-    color: black; /* Lighter text color for contrast */
-    transform: scale(1.05);
-    border: 1px solid black; /* Slightly enlarge the button */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    background-color: #ffffff; 
+    color: black;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
 }
 .form-footer {
     display: flex;
@@ -74,10 +75,12 @@ body,html {
     text-decoration: none;
     font-family: Asian2;
     font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .form-footer a:hover {
-    text-decoration: underline;
+    transform: scale(1.05);
 }
 .eror {
     margin: 10px auto;
