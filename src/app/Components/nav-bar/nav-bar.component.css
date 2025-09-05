@@ -58,7 +58,7 @@ body {
 }
 
 .logo-img {
-    width: 100%;
+    width: 70px;
     height: 70px;
 }
 
@@ -329,7 +329,7 @@ main {
         display: none;
     }
 }
-@media (max-width: 363px) {
+@media (max-width: 390px) {
     .brand .title .name {
         font-size: 32px;
     }
@@ -338,6 +338,7 @@ main {
     }
     .logo-img {
         height: 60px;
+        width: 60px;
     }
 }
 @media (prefers-reduced-motion: reduce) {
