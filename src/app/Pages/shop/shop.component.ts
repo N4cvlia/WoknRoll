@@ -65,7 +65,6 @@ export class ShopComponent implements OnInit{
       if(this.vegOnly) {
         this.allProducts = this.allProducts.filter((p: any) => p.vegeterian == true);
       }
-      console.log(this.allProducts);
     });
   }
   applyFilterReset() {

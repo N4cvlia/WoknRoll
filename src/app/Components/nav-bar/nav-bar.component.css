@@ -55,6 +55,8 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(6px) saturate(120%);
     box-shadow: 0 10px 50px rgba(157, 36, 38, 0.28), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
+    z-index: 100;
+
 }
 
 .logo-img {
@@ -306,6 +308,47 @@ main {
     margin: 26px auto;
     padding: 20px;
 }
+.profileDrop {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    gap: 10px;
+    
+}
+.profileDropdown {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 88px;
+    right: 37px;
+    background: rgba(0, 0, 0, 0.443);
+    border-radius: 0 0 12px 12px;
+    /* max-height: 0px; */
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.25s ease;
+    min-width: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(6px) saturate(120%);
+    box-shadow: 0 10px 50px rgba(157, 36, 38, 0.28), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
+    z-index: 0;
+}
+.viewProfile, 
+.logOut {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    width: 90%;
+    height: 100%;
+    border: 0px;
+    background: linear-gradient(180deg, var(--red), var(--red-deep));
+    color: #fff;
+    font-family: Asian2;
+}
 @media (max-width:940px) {
     .nav-list {
         display: none;
@@ -321,12 +364,24 @@ main {
 
     /* hide text login on mobile to keep actions minimal */
 }
-@media (max-width: 725px) {
+@media (min-width: 744px) {
+    .profileDropdown {
+        display: none;
+    }
+}
+@media (max-width: 744px) {
     .hamburger {
         display: inline-flex;
     }
     .btn-menu {
         display: none;
+    }
+}
+@media (max-width: 500px) {
+    .profileDropdown {
+        width: 85%;
+        right: 7.5%;
+
     }
 }
 @media (max-width: 390px) {

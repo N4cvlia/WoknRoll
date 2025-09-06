@@ -40,13 +40,13 @@
       }
 
       <!-- Primary CTA: GO TO MENU -->
-      <a href="#menu" class="btn-menu" role="button" aria-label="Open menu" routerLink="shop">
+      <a routerLink="shop" class="btn-menu" role="button" aria-label="Open menu" routerLink="shop">
         <span class="icon1" aria-hidden="true">🍜</span>
         <span>Menu</span>
       </a>
 
       <!-- Hamburger (mobile) -->
-      <button class="hamburger" id="hambtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
+      <button (click)="profileDrop($event)" class="hamburger" id="hambtn" aria-expanded="false" aria-controls="mobileDrawer" aria-label="Open menu">
         <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect y="0" width="22" height="2" rx="1" fill="white" />
           <rect y="7" width="22" height="2" rx="1" fill="white" />
@@ -55,6 +55,33 @@
       </button>
     </div>
   </header>
+  <div class="profileDropdown" [style.transform]="profileVisib ? 'scaleY(1)' : 'scaleY(0)'"  #profileDropdown>
+    @if (isLoggedIn) {
+      <button routerLink="profile" class="viewProfile" style="gap: 8px;">
+        <img [src]="profile?.avatar" alt="" class="icon1"> 
+        <span>{{profile?.firstName}}</span>
+      </button>
+      <button  routerLink="cart" class="logOut" style="gap: 8px;">
+        <img src="tetricart.svg" alt="" class="icon2"> 
+        <span>Cart</span>
+      </button>
+      <button (click)="logOut()" class="logOut" style="gap: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 3h6v18h-6M10 17l5-5-5-5M3 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> Log Out
+      </button>
+    }@else {
+      <button routerLink="login" class="viewProfile" style="gap: 8px;">
+        <img src="te.svg" alt="" class="icon1"> 
+          <span>Log In</span>
+      </button>
+      <button  routerLink="shop" class="logOut" style="gap: 8px;">
+        <span class="icon1" aria-hidden="true">🍜</span>
+        <span>Menu</span>
+      </button>
+    }
+    
+    </div>
 </div>
 </body>
 

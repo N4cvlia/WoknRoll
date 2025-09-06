@@ -20,7 +20,6 @@ export class CartComponent implements OnInit{
   constructor(private actR: ActivatedRoute, private api: ApiService) { }
   ngOnInit(): void {
     this.cartInfo = this.actR.snapshot.data["cartInfo"];
-    console.log(this.cartInfo);
     this.calcTotal();
   }
 
