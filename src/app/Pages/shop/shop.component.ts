@@ -55,6 +55,9 @@ export class ShopComponent implements OnInit{
     this.api.getProductsByCategory(id).subscribe((res: any) => {
       this.allProducts = res.products;
       this.isChecked = "";
+      this.choosenSpicness = -1;
+      this.noNuts = "";
+      this.vegOnly = "";
     });
   }
   applyFilter() {
