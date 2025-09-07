@@ -18,6 +18,14 @@ export class ShopComponent implements OnInit{
   public noNuts: any = "";
   public vegOnly: any = "";
   public isChecked: any = "checked";
+  public sideButtons: any = [
+    {
+      boolean: false
+    },
+    {
+      boolean: false
+    }
+  ]
 
   constructor(private api : ApiService, private actR: ActivatedRoute, private routing: Router, private subjects: SubjectsService, private cookies: CookieService) {
     scrollTo(0,0);
@@ -27,6 +35,9 @@ export class ShopComponent implements OnInit{
       this.allCategorys = res['ShopInfo'].categories;
       this.allProducts = res['ShopInfo'].products;
     });
+  }
+  sidePanel(num:any) {
+    this.sideButtons[num].boolean = !this.sideButtons[num].boolean
   }
 
   getAllProducts() {
